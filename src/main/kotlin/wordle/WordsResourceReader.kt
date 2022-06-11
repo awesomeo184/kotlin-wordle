@@ -4,7 +4,7 @@ import java.io.File
 
 class WordsResourceReader {
 
-    fun readWords(path: String): Set<String> {
-        return File(path).useLines { it.toSet() }
+    fun readWords(path: String): Set<Word> {
+        return File(path).useLines { it -> it.map { Word(it) }.toSet() }
     }
 }
