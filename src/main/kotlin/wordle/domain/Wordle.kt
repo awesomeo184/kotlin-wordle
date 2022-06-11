@@ -16,12 +16,20 @@ class Wordle(private val words: List<Word>, days: Int) {
         return wordResult
     }
 
-    fun isTrialRemain(): Boolean {
-        return matchResults.size < TRIAL_LIMIT
-    }
-
     fun currentTrialCount(): Int {
         return matchResults.size
+    }
+
+    fun isEnd(): Boolean {
+        return isTrialRemain() && !isAllCorrect()
+    }
+
+    fun isAllCorrect(): Boolean {
+        return matchResults.last().isAllCorrect()
+    }
+
+    private fun isTrialRemain(): Boolean {
+        return matchResults.size < TRIAL_LIMIT
     }
 
     companion object {

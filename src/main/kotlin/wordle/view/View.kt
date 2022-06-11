@@ -2,7 +2,6 @@ package wordle.view
 
 import wordle.domain.LetterResult
 import wordle.domain.LetterResult.*
-import wordle.domain.WordResult
 import wordle.domain.Wordle
 
 private val emojiByLetterResult: Map<LetterResult, String> = mapOf(
@@ -19,12 +18,13 @@ fun printTrialMessage() {
     println("정답을 입력해주세요.")
 }
 
-fun printWordResult(wordResults: List<WordResult>) {
-    for (wordResult in wordResults) {
-        for (letterResult in wordResult.values) {
-            print(emojiByLetterResult[letterResult])
-        }
-        println()
+fun printWordResult(wordle: Wordle) {
+    if (wordle.isAllCorrect()) {
+        printTotalTrialCount(wordle.currentTrialCount())
+    }
+
+    for (wordResult in wordle.matchResults) {
+        println(wordResult.values.map { emojiByLetterResult[it] }.joinToString(separator = ""))
     }
     println()
 }
