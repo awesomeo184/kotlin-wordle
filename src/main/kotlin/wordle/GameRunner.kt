@@ -3,6 +3,7 @@ package wordle
 import wordle.domain.Word
 import wordle.domain.Wordle
 import wordle.view.printStartMessage
+import wordle.view.printTotalTrialCount
 import wordle.view.printTrialMessage
 import wordle.view.printWordResult
 import java.time.LocalDateTime
@@ -18,11 +19,12 @@ class GameRunner {
         while (wordle.isTrialRemain()) {
             printTrialMessage()
             val matchResult = wordle.tryMatch(Word(readln()))
-            printWordResult(wordle.matchResults)
-
             if (matchResult.isAllCorrect()) {
+                printTotalTrialCount(wordle.currentTrialCount())
+                printWordResult(wordle.matchResults)
                 break
             }
+            printWordResult(wordle.matchResults)
         }
     }
 

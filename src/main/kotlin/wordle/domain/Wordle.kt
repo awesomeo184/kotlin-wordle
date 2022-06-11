@@ -17,6 +17,14 @@ class Wordle(private val words: List<Word>, days: Int) {
     }
 
     fun isTrialRemain(): Boolean {
-        return matchResults.size < 6
+        return matchResults.size < TRIAL_LIMIT
+    }
+
+    fun currentTrialCount(): Int {
+        return matchResults.size
+    }
+
+    companion object {
+        const val TRIAL_LIMIT = 6
     }
 }

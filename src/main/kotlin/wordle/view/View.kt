@@ -3,6 +3,7 @@ package wordle.view
 import wordle.domain.LetterResult
 import wordle.domain.LetterResult.*
 import wordle.domain.WordResult
+import wordle.domain.Wordle
 
 private val emojiByLetterResult: Map<LetterResult, String> = mapOf(
     NONE to String(Character.toChars(0x2B1C)),
@@ -11,7 +12,7 @@ private val emojiByLetterResult: Map<LetterResult, String> = mapOf(
 )
 
 fun printStartMessage() {
-    println("WORDLE을 6번 만에 맞춰 보세요.\n시도의 결과는 타일의 색 변화로 나타납니다.")
+    println("WORDLE을 ${Wordle.TRIAL_LIMIT}번 만에 맞춰 보세요.\n시도의 결과는 타일의 색 변화로 나타납니다.")
 }
 
 fun printTrialMessage() {
@@ -26,4 +27,8 @@ fun printWordResult(wordResults: List<WordResult>) {
         println()
     }
     println()
+}
+
+fun printTotalTrialCount(count: Int) {
+    println("${count}/${Wordle.TRIAL_LIMIT}\n")
 }
