@@ -3,6 +3,8 @@ package wordle
 import io.kotest.assertions.throwables.shouldNotThrowAny
 import io.kotest.assertions.throwables.shouldThrowWithMessage
 import io.kotest.core.spec.style.AnnotationSpec
+import wordle.domain.Word
+import wordle.domain.Wordle
 
 class WordleTest : AnnotationSpec() {
 

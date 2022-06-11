@@ -1,7 +1,4 @@
-package wordle
-
-import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
+package wordle.domain
 
 class Wordle(private val words: List<Word>, days: Int) {
 

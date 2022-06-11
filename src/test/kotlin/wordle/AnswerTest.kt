@@ -3,7 +3,10 @@ package wordle
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.inspectors.forAll
 import io.kotest.matchers.shouldBe
-import wordle.LetterResult.*
+import wordle.domain.LetterResult.*
+import wordle.domain.Answer
+import wordle.domain.Word
+import wordle.domain.WordResult
 
 class AnswerTest : StringSpec({
 

@@ -1,6 +1,6 @@
-package wordle
+package wordle.domain
 
-import wordle.LetterResult.*
+import wordle.domain.LetterResult.*
 
 class WordResult(val values: List<LetterResult>) {
     fun isAllCorrect(): Boolean {
