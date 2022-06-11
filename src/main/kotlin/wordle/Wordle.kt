@@ -1,6 +1,6 @@
 package wordle
 
-class Wordle(val words: Set<Word>) {
+class Wordle(val words: List<Word>) {
 
     fun tryMatch(word: Word) {
         if (!words.contains(word)) {
