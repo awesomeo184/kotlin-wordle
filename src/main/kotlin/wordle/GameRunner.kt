@@ -20,7 +20,7 @@ class GameRunner {
 
             println("정답을 입력해주세요.")
             val matchResult = wordle.tryMatch(Word(readln()))
-            printWordResult(matchResult)
+            printWordResult(wordle.matchResults)
 
             if (matchResult.isAllCorrect()) {
                 break

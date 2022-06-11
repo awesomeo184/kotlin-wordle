@@ -10,9 +10,12 @@ private val emojiByLetterResult: Map<LetterResult, String> = mapOf(
     CORRECT to String(Character.toChars(0x1F7E9)),
 )
 
-fun printWordResult(wordResult: WordResult) {
-    for (letterResult in wordResult.values) {
-        print(emojiByLetterResult[letterResult])
+fun printWordResult(wordResults: List<WordResult>) {
+    for (wordResult in wordResults) {
+        for (letterResult in wordResult.values) {
+            print(emojiByLetterResult[letterResult])
+        }
+        println()
     }
     println()
 }
