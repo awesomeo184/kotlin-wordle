@@ -15,4 +15,8 @@ class Wordle(private val words: List<Word>, days: Int) {
         matchResults.add(wordResult)
         return wordResult
     }
+
+    fun isTrialRemain(): Boolean {
+        return matchResults.size < 6
+    }
 }
