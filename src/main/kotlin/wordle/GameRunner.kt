@@ -1,5 +1,8 @@
 package wordle
 
+import wordle.domain.Word
+import wordle.domain.Wordle
+import wordle.view.printWordResult
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
@@ -14,9 +17,10 @@ class GameRunner {
         var count = 6
 
         while (count-- != 0) {
+
             println("정답을 입력해주세요.")
             val matchResult = wordle.tryMatch(Word(readln()))
-            println(matchResult)
+            printWordResult(matchResult)
 
             if (matchResult.isAllCorrect()) {
                 break
